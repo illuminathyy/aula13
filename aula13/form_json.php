@@ -11,7 +11,7 @@ function envia() {
     endereco += '?nome=' + document.getElementById('nome').value;
     endereco += '&email=' + document.getElementById('email').value;
     endereco += '&senha=' + document.getElementById('senha').value;
-
+    endereco += '&tecnico=' + document.getElementById('tecnico').checked;
     // cria objeto 
     const xhttp = new XMLHttpRequest();
 
@@ -43,7 +43,7 @@ function envia() {
         <label for="">Senha:</label>
         <input type="password" id="senha"><br>
         <label for="">Técnico?</label>
-        <input type="checkbox" id="tecnico" name="tecnico" checked />
+        <input type="checkbox" id="tecnico" name="tecnico">
         <input type="button" onclick="envia()" value="Cadastrar">
     </form>
     <p id="saida"></p>
