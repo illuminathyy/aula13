@@ -4,12 +4,12 @@
 
 include 'conexao.php';
 
-if($_GET['tecnico'] == 'on')
+if($_GET['tecnico'] == 'true')
 $tecnico = 1;
 else
 $tecnico = 0;
 
-$comandoSQL = "INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`) VALUES (NULL, '{$_GET['nome']}', '{$_GET['email']}', '{$_GET['senha']}', '($tecnico)";
+$comandoSQL = "INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `tecnico`) VALUES (NULL, '{$_GET['nome']}', '{$_GET['email']}', '{$_GET['senha']}', '{$tecnico}')";
 
 // PDOStatement|false
 $resultado = $conexao->query($comandoSQL);
